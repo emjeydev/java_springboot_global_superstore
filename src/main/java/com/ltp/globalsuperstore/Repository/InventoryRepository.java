@@ -1,10 +1,12 @@
 package com.ltp.globalsuperstore.Repository;
 
 import com.ltp.globalsuperstore.Item;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class InventoryRepository {
     private List<Item> items = new ArrayList<>();
 

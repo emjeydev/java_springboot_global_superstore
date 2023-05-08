@@ -3,6 +3,7 @@ package com.ltp.globalsuperstore.Controller;
 import com.ltp.globalsuperstore.Constants;
 import com.ltp.globalsuperstore.Item;
 import com.ltp.globalsuperstore.Service.InventoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,7 +22,8 @@ import java.util.concurrent.TimeUnit;
 @Controller
 public class inventoryController {
 
-    InventoryService inventoryService = new InventoryService();
+    @Autowired
+    InventoryService inventoryService;
 
     @GetMapping("/")
     public String getForm(Model model, @RequestParam(required = false) String id) {

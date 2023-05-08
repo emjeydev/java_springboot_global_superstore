@@ -3,13 +3,18 @@ package com.ltp.globalsuperstore.Service;
 import com.ltp.globalsuperstore.Constants;
 import com.ltp.globalsuperstore.Item;
 import com.ltp.globalsuperstore.Repository.InventoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+@Service
 public class InventoryService {
-    InventoryRepository inventoryRepository = new InventoryRepository();
+
+    @Autowired
+    InventoryRepository inventoryRepository;
 
     public Item getItem(int index) {
         return inventoryRepository.getItem(index);
